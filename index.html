@@ -65,7 +65,7 @@ var unityI = null;
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
- unityI = unityInstance;
+unityI = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -76,7 +76,7 @@ var unityI = null;
       };
       document.body.appendChild(script);
     </script>
- <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 
     <script type="text/javascript">
 
@@ -103,10 +103,9 @@ var unityI = null;
           console.log("Saved!")});
       }
 
-            function showFullscrenAd(){
- vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
+      function showFullscrenAd(){
+        vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
           console.log(data);});
-       
       }
 
       function showRewardedAd(){
@@ -116,7 +115,7 @@ var unityI = null;
       }
 
       function PostBox(text) { // добавить на стену
-vkBridge.send('VKWebAppShowWallPostBox', {message:"Играем в Puzzle: Triangles! Очень увлекательно и интересно! Иди поиграй со мной!" , "attachments": "https://vk.com/app8115733"}).then(data => {
+vkBridge.send('VKWebAppShowWallPostBox', {message:"Играем в Puzzle: Nature! Очень увлекательно и интересно! Иди поиграй со мной!" , "attachments": "https://vk.com/app8115733"}).then(data => {
   console.log(data);
           unityI.SendMessage('VKSDK', 'RewardGetting',JSON.stringify(data.result));})
 }
@@ -136,5 +135,8 @@ vkBridge.send('VKWebAppShowInviteBox', {}).then(data => {
 
 
     </script>
+  </body>
+</html>
+
   </body>
 </html>
